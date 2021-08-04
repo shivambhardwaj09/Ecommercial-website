@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/accounts/signup/style.css">
+    <title>Website Sign up</title>
+</head>
+<body>
+    <%- include('../partials/header', {
+        username: "",
+        logout: false
+    }); -%>
+    <center>
+        <h5> <%= error %> </h5>
+    </center>
+    <section class="container">
+        <center>
+            Fill the following credentials to SignUp
+        </center>
+        <section class="signup">
+            <form action="/signup" method="post" enctype="multipart/form-data">
+                <input type="text" required name="username" id="username" placeholder="Username">
+                <input type="email" required name="email" id="email" placeholder="Email Address">
+                <input type="password" required name="password" id="password" placeholder="Password">
+                <input type="password" required name="confirmpassword" id="conirmpassword" placeholder="Confirm Password">
+                <input type="file" required name="profile" id="file">
+                <div class="button">
+                    <input class="btn" type="submit" value="Submit">
+                    <input class="btn" type="reset" value="Clear">
+                </div>
+            </form>
+            <h6 style="margin-bottom: 5px;">
+                By continuing, you'll agree to Website's Conditions of Use and Privacy Notice.
+            </h6>
+            <hr>
+        </section>
+        <section class="existing-login">
+            <h6>Already a User?</h6>
+            <a href="/login"><button class="btn-login">Login</button></a>
+        </section>
+    </section>
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/users/home/style.css">
+    <title>Iron Kingdom</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs', { showCart: true, profileImgName: profileImage, isAdmin: isAdmin }); -%>
+        <section class="products-container" data-products-container>
+            <% products.forEach(product => { %>
+                <center data-align-center>
+                    <div class="product">
+                        <img src="<%= product.src %>" />
+                        <h4>
+                            <%= product.title %>
+                        </h4>
+                        <h4 style="position: relative; left: 0%;">
+                            Rs. <%= product.price %>
+                        </h4>
+                        <% if (cartItems[product.id]) { %>
+                            <button class="btn-add-to-cart" disabled>
+                                Added
+                            </button>
+                        <% } else { %>
+                            <button class="btn-add-to-cart" id="<%= product.id %>" onclick="getCartButtonID(this)">
+                                Add To Cart
+                            </button>
+                        <% } %>
+                        <button class="popup" id="<%= product.id %>" onclick="getViewButtonID(this)" expand-more>
+                            View
+                            <span class="popuptext" expand-msg id="<%= product.id %>">
+                                Desc = <%= product.description %>
+                                <br>
+                                Instock = <%= product.stock %>
+                            </span>
+                        </button>
+                    </div>
+                </center>
+            <% }) %>
+        </section>
+        <center style="margin: 20px 0;">
+            <button class="btn" load-more>
+                Load More
+            </button>
+        </center>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+            <span class="material-icons">
+                expand_less
+            </span>
+        </button>
+        <%- include('../partials/footer.ejs'); -%>
+        <script src="/js/user/home/script.js"></script>
+</body>
+
+</html>

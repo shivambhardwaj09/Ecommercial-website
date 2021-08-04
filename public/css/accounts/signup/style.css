@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bree Serif', serif;
+    font-weight: 500;
+}
+
+h5 {
+    display: inline-block;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: red;
+}
+
+body {
+    background: #eee;
+}
+
+.container {
+    margin: 2em auto;
+    min-height: 485px;
+    width: 500px;
+    padding: 2rem 1rem;
+    border-radius: 2px;
+    background: linear-gradient(to right, rgb(181, 167, 245), rgb(177, 243, 240));
+    box-shadow: 8px 8px 4px rgb(215, 213, 241);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup {
+    padding: 1rem 0;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    height: 40px;
+    border: 2px solid #000;
+    margin: 1rem;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+input[type=text]::placeholder,
+input[type=password]::placeholder,
+input[type=email]::placeholder {
+    text-align: center;
+    font-size: 1rem;
+}
+
+input[type=file] {
+    margin-left: 15px;
+}
+
+.button {
+    align-self: center;
+}
+
+.btn,
+.btn-login {
+    margin: 15px 0;
+    align-self: center;
+    cursor: pointer;
+    width: 90px;
+    height: 32px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.644);
+    border-radius: 3px;
+    transform: scale(1);
+    transition: 50ms transform ease-in-out;
+}
+
+.btn:hover,
+.btn-login:hover {
+    border: 2px solid #000;
+    background-color: rgb(233, 229, 229);
+}
+
+.btn:active,
+.btn-login:active {
+    box-shadow: 4px 4px 8px rgb(160, 160, 160);
+    transform: scale(0.9);
+}
+
+.btn-login {
+    width: 110px;
+    font-size: 0.8rem;
+}

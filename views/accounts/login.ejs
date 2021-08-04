@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/accounts/login/style.css">
+    <title>Website Sign In</title>
+</head>
+<body>
+    <%- include('../partials/header', {
+        username: "",
+        logout: false
+    }); -%>
+    <center>
+        <h5> <%= error %> </h5>
+    </center>
+    <section class="container">
+        <center>
+            Fill the following credentials to Login
+        </center>
+        <section class="login">
+            <form action="/login" method="post">
+                <input type="email" name="email" id="email" placeholder="Email Address">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <a href="/forgot_password" style="margin-left: 20px; font-size: 0.8rem; text-decoration: none;">Forgot Password ?</a>
+                <input type="submit" class="btn" value="Submit" id="submit">
+            </form>
+            <h6 style="margin: 15px 0;">
+                By continuing, you'll agree to Website's Conditions of Use and Privacy Notice.
+            </h6>
+            <hr>
+        </section>
+        <section class="create-new">
+            <h6>New to Website?</h6>
+            <a href="/signup"><button class="btn-create">Create New Account</button></a>
+        </section>
+    </section>
+    <%- include('../partials/footer') -%>
+</body>
+</html>

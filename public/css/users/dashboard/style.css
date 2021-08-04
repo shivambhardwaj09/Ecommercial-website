@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bree Serif', serif;
+    font-weight: 500;
+}
+
+body {
+    background-color: #B3E5FC;
+    border-radius: 10px
+}
+
+.card {
+    /* min-height: 250px; */
+    width: 500px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.articles {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number1 {
+    font-weight: 500
+}
+
+.followers {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number2 {
+    font-weight: 500
+}
+
+.rating {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number3 {
+    font-weight: 500
+}
+
+.label-products {
+    position: relative;
+    top: 10%;
+    left: 4%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    align-self: center;
+}
+
+input {
+    height: 40px;
+    border: 2px solid #000;
+    margin: 1rem;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    margin: 5px 0;
+    align-self: center;
+    cursor: pointer;
+    width: 90px;
+    height: 32px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.644);
+    border-radius: 3px;
+    transform: scale(1);
+    transition: 50ms transform ease-in-out;
+}
+
+.btn-submit:hover {
+    border: 2px solid #000;
+    background-color: rgb(233, 229, 229);
+}
+
+.btn-submit:active {
+    box-shadow: 4px 4px 8px rgb(160, 160, 160);
+    transform: scale(0.9);
+}

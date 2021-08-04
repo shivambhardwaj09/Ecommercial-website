@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/users/cart/style.css">
+    <title>Iron Kingdom || Cart</title>
+</head>
+<body>
+    <%- //include('../partials/header.ejs', { showCart: false, profileImgName: profileImgName }); -%>
+    <div>
+        <button><a href="/" style="color: #fff; text-decoration: none;">Go Back</a></button>
+        <h3 style="position: absolute; top: 0%; left: 48%;">Cart !!!</h3>
+    </div>
+    <section class="products-container" data-products-container>
+    <% if (!Object.keys(cartItems).length) { %>
+        <div>
+            <h4 style="margin-top: 20px;">Opps, Your Cart is Empty, Continue Shopping !</h4>
+        </div>
+    <% } else { %>
+        <% products.forEach(product => { %>
+            <% if (cartItems[product.id]) { %>
+                <center data-align-center>
+                    <div class="product">
+                        <img src="<%= product.src %>" />
+                        <h4>
+                            <%= product.title %>
+                        </h4>
+                        <h4>
+                            Rs. <%= product.price %>
+                        </h4>
+                        <div class="quantity-btn">
+                            <div>
+                                <h5>Quantity: <span id="<%= product.id %>" data-h5>0</span></h5>
+                            </div>
+                            <div id="<%= product.id %>" data-button-parent>
+                                <button class="minus-plus-btn" id="<%= product.id %>" onclick="getButtonId(this, 'MINUS')">-</button>
+                                <button class="minus-plus-btn" id="<%= product.id %>" onclick="getButtonId(this, 'PLUS')" data-product-stock="<%= product.stock %>">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-add-to-cart" id="<%= product.id %>" onclick="getCartButtonID(this)">
+                            Delete
+                        </button>
+                        <button class="popup" id="<%= product.id %>" onclick="getViewButtonID(this)" expand-more>
+                            View Desc
+                            <span class="popuptext" expand-msg id="<%= product.id %>">
+                                Desc = <%= product.description %>
+                                <br>
+                                Instock = <%= product.stock %>
+                            </span>
+                        </button>
+                    </div>
+                </center>
+            <% } %>
+        <% }); %>
+    <% } %>
+    </section>
+    <%- //include('../partials/footer.ejs'); -%>
+    <script src="/js/user/cart/script.js"></script>
+</body>
+</html>

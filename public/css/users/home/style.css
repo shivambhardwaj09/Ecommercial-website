@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-family: 'Bree Serif', serif;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.product {
+    margin: 1em 2em;
+    padding: 1em 1em;
+    background: rgba(0, 0, 0, 0.05);
+    width: 400px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    transition: 50ms box-shadow ease-in-out;
+}
+
+.product:hover {
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    border-radius: 4px;
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.product h4 {
+    margin-bottom: 20px;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 0.3s;
+}
+
+.popuptext {
+    font-size: 0.8rem;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity:1 ;
+    }
+}
+
+button,
+.btn {
+    border-radius: 3px;
+    padding: 0.4em 1em;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 80px;
+    transform: scale(1);
+    transition: 50ms transform ease-in-out;
+    background-color: rgb(43, 255, 255);
+}
+
+button:hover {
+    background-color: rgb(6, 235, 235);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    outline: none;
+    transform: scale(0.9);
+}
+
+.btn,
+.btn-add-to-cart {
+    width: 130px;
+    background-color: #555;
+    color: #fff;
+}
+
+.btn:hover,
+.btn-add-to-cart:hover {
+    background-color: rgb(71, 55, 55);
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    width: 50px;
+    bottom: 50px;
+    right: 10px;
+    z-index: 99;
+    font-size: 0.7rem;
+    border: none;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#myBtn:hover {
+    background-color: red;
+}

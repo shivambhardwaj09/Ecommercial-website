@@ -1,0 +1,43 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="/css/partials/header/style.css">
+<nav>
+    <div class="left-pane">
+        <a href="/">
+            <span id="round" class="material-icons">
+                home
+            </span>
+        </a>
+    </div>
+    <div class="middle-pane">
+        Iron Kingdom
+    </div>
+    <div class="right-pane">
+        <% if (logout !== false) { %>
+            <div class="cart">
+                <% if (showCart) { %>
+                    <a href="/user/cart" class="cart-bag">
+                        <span class="material-icons">
+                            local_mall
+                        </span>
+                    </a>
+                <% } %>
+                <div class="dropdown">
+                    <div class="user">
+                        <button class="dropbtn" disabled style="color: #000;">
+                            <%= username %>
+                        </button>
+                        <img src="./images/<%= profileImgName %>" alt="" srcset="">
+                        <div class="dropdown-content">
+                            <% if (isAdmin) { %>
+                                <a class="dropdown-options" href="/admin/dashboard">Dashboard</a>
+                            <% } else { %>
+                                <a class="dropdown-options" href="/user/dashboard">Dashboard</a>
+                            <% } %>
+                            <a class="dropdown-options" href="/logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</nav>

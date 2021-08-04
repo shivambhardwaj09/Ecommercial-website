@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bree Serif', serif;
+    font-weight: 500;
+}
+
+body {
+    background: #eee;
+}
+
+h5 {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    width: 150px;
+    line-height: 40px;
+    word-spacing: 2px;
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+    background-color: red;
+}
+
+.container {
+    margin: 2em auto;
+    min-height: 350px;
+    width: 450px;
+    padding: 2rem 1.2rem;
+    border-radius: 3px;
+    background:linear-gradient(to right, rgb(181, 167, 245), rgb(177, 243, 240));
+    box-shadow: 8px 8px 4px rgb(215, 213, 241);
+}
+
+.forgot-password {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+input[type=email] {
+    height: 40px;
+    border: 2px solid #000;
+    margin: 1rem;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+input[type=email]::placeholder {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.btn {
+    margin: 15px 0;
+    align-self: center;
+    cursor: pointer;
+    width: 100px;
+    height: 32px;
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.644);
+    border-radius: 3px;
+    transform: scale(1);
+    transition: 50ms transform ease-in-out;
+}
+
+.btn:hover {
+    border: 2px solid #000;
+    background-color: rgb(233, 229, 229);
+}
+
+.btn:active {
+    box-shadow: 4px 4px 8px rgb(160, 160, 160);
+    transform: scale(0.9);
+}
