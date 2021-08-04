@@ -9,7 +9,7 @@ const path = require('path');
 const fs = require('fs');
 const { stringify } = require('querystring');
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const jwt_secret = 'the most secret string of text in history';
 const mailjet = mailjet_client.connect('f30faec486f81526079f200173d1385a', 'c3e524c5419f727bab0d9b4cd16251bf');
